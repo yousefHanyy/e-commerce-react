@@ -30,8 +30,8 @@ export default function Home({
         <button
           className={
             activeCategory === 0
-              ? "px-5 py-2 text-center  border-t bg-blue-500 text-white cursor-pointer hover:bg-blue-500 hover:text-white"
-              : "px-5 py-2 text-center  border-t bg-blue-200 cursor-pointer hover:bg-blue-500 hover:text-white"
+              ? "px-8 py-2 text-center  border-t bg-blue-500 text-white cursor-pointer hover:bg-blue-500 hover:text-white"
+              : "px-8 py-2 text-center  border-t bg-blue-200 cursor-pointer hover:bg-blue-500 hover:text-white"
           }
           onClick={() => {
             handleCategoryChange(0);
@@ -42,8 +42,8 @@ export default function Home({
         <button
           className={
             activeCategory === 1
-              ? "px-5 py-2 text-center border-t bg-blue-500 text-white cursor-pointer hover:bg-blue-500 hover:text-white"
-              : "px-5 py-2 text-center  border-t bg-blue-200 cursor-pointer hover:bg-blue-500 hover:text-white"
+              ? "px-8 py-2 text-center border-t bg-blue-500 text-white cursor-pointer hover:bg-blue-500 hover:text-white"
+              : "px-8 py-2 text-center  border-t bg-blue-200 cursor-pointer hover:bg-blue-500 hover:text-white"
           }
           onClick={() => {
             handleCategoryChange(1);
@@ -54,8 +54,8 @@ export default function Home({
         <button
           className={
             activeCategory === 2
-              ? "px-5 py-2 text-center  border-t bg-blue-500 text-white cursor-pointer hover:bg-blue-500 hover:text-white"
-              : "px-5 py-2 text-center  border-t bg-blue-200 cursor-pointer hover:bg-blue-500 hover:text-white"
+              ? "px-8 py-2 text-center  border-t bg-blue-500 text-white cursor-pointer hover:bg-blue-500 hover:text-white"
+              : "px-8 py-2 text-center  border-t bg-blue-200 cursor-pointer hover:bg-blue-500 hover:text-white"
           }
           onClick={() => {
             handleCategoryChange(2);
@@ -66,8 +66,8 @@ export default function Home({
         <button
           className={
             activeCategory === 3
-              ? "px-5 py-2 text-center border-b border-t bg-blue-500 text-white cursor-pointer hover:bg-blue-500 hover:text-white"
-              : "px-5 py-2 text-center border-b border-t bg-blue-200 cursor-pointer hover:bg-blue-500 hover:text-white"
+              ? "px-8 py-2 text-center border-b border-t bg-blue-500 text-white cursor-pointer hover:bg-blue-500 hover:text-white"
+              : "px-8 py-2 text-center border-b border-t bg-blue-200 cursor-pointer hover:bg-blue-500 hover:text-white"
           }
           onClick={() => {
             handleCategoryChange(3);

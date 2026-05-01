@@ -20,14 +20,14 @@ export default function Cart({
       ))}
       {items.length !== 0 ? (
         <button
-          className="py-1 px-5 rounded  bg-gray-200  hover:bg-blue-500 hover:text-white transition cursor-pointer"
+          className="py-1 px-5 rounded mt-4  bg-gray-200  hover:bg-blue-500 hover:text-white transition cursor-pointer"
           onClick={handleReset}
         >
           Reset
         </button>
       ) : (
-        <div className="mt-15">
-          Cart is empty. Added items will appear here.
+        <div className="mt-15 text-xl">
+          Cart is empty. <br /> Added items will appear here.
         </div>
       )}
     </div>
