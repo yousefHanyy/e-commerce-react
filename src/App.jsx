@@ -5,6 +5,8 @@ import { Route, Routes } from "react-router";
 import Home from "./pages/Home";
 import ShoppingCart from "./pages/ShoppingCart";
 import axios from "axios";
+import Admin from "./pages/Admin";
+import ProductForm from "./pages/ProductForm";
 
 function App() {
   const [items, setItem] = useState([]);
@@ -107,6 +109,8 @@ function App() {
         numberOfCartItems={items.reduce((acc, itm) => acc + itm.count, 0)}
       />
       <Routes>
+        <Route path="/product/new" element={<ProductForm />} />
+        <Route path="/admin" element={<Admin items={items} />} />
         <Route
           path="/"
           element={

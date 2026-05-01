@@ -9,6 +9,9 @@ function Navbar({ numberOfCartItems }) {
             <h1>Logo :)</h1>
           </li>
         </NavLink>
+        <NavLink to="/admin">
+          <li className="btn">Admin</li>
+        </NavLink>
         <NavLink to="/shopping">
           <li className="relative hover:bg-gray-300 rounded size-7 transition">
             <svg
