@@ -1,0 +1,76 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Small Burger",
+      "count": 0,
+      "price": 100,
+      "isAdded": false,
+      "categoryId": 1
+    },
+    {
+      "id": 2,
+      "name": "Small Pizza",
+      "count": 0,
+      "price": 70,
+      "isAdded": false,
+      "categoryId": 2
+    },
+    {
+      "id": 3,
+      "name": "Small Water",
+      "count": 0,
+      "price": 10,
+      "isAdded": false,
+      "categoryId": 3
+    },
+    {
+      "id": 4,
+      "name": "Medium Burger",
+      "count": 0,
+      "price": 150,
+      "isAdded": false,
+      "categoryId": 1
+    },
+    {
+      "id": 5,
+      "name": "Medium Pizza",
+      "count": 0,
+      "price": 90,
+      "isAdded": false,
+      "categoryId": 2
+    },
+    {
+      "id": 6,
+      "name": "Medium Water",
+      "count": 0,
+      "price": 15,
+      "isAdded": false,
+      "categoryId": 3
+    },
+    {
+      "id": 7,
+      "name": "Large Burger",
+      "count": 0,
+      "price": 200,
+      "isAdded": false,
+      "categoryId": 1
+    },
+    {
+      "id": 8,
+      "name": "Large Pizza",
+      "count": 0,
+      "price": 110,
+      "isAdded": false,
+      "categoryId": 2
+    },
+    {
+      "id": 9,
+      "name": "Large Water",
+      "count": 0,
+      "price": 25,
+      "isAdded": false,
+      "categoryId": 3
+    }
+  ]
+}

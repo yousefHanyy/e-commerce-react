@@ -1,89 +1,42 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Cart from "./components/Cart";
 import Navbar from "./components/Navbar";
 import { Route, Routes } from "react-router";
 import Home from "./pages/Home";
 import ShoppingCart from "./pages/ShoppingCart";
+import axios from "axios";
 
 function App() {
-  const [items, setItem] = useState([
-    {
-      id: 1,
-      name: "Small Burger",
-      count: 0,
-      price: 100,
-      isAdded: false,
-      categoryId: 1,
-    },
-    {
-      id: 2,
-      name: "Small Pizza",
-      count: 0,
-      price: 70,
-      isAdded: false,
-      categoryId: 2,
-    },
-    {
-      id: 3,
-      name: "Small Water",
-      count: 0,
-      price: 10,
-      isAdded: false,
-      categoryId: 3,
-    },
-    {
-      id: 4,
-      name: "Medium Burger",
-      count: 0,
-      price: 150,
-      isAdded: false,
-      categoryId: 1,
-    },
-    {
-      id: 5,
-      name: "Medium Pizza",
-      count: 0,
-      price: 90,
-      isAdded: false,
-      categoryId: 2,
-    },
-    {
-      id: 6,
-      name: "Medium Water",
-      count: 0,
-      price: 15,
-      isAdded: false,
-      categoryId: 3,
-    },
-    {
-      id: 7,
-      name: "Large Burger",
-      count: 0,
-      price: 200,
-      isAdded: false,
-      categoryId: 1,
-    },
-    {
-      id: 8,
-      name: "Large Pizza",
-      count: 0,
-      price: 110,
-      isAdded: false,
-      categoryId: 2,
-    },
-    {
-      id: 9,
-      name: "Large Water",
-      count: 0,
-      price: 25,
-      isAdded: false,
-      categoryId: 3,
-    },
-  ]);
+  const [items, setItem] = useState([]);
 
   const [activeCategory, setActiveCategory] = useState(0);
   const [page, setPage] = useState(1);
   const itemsPerPage = 3;
+
+  const [loading, setLoading] = useState(false);
+
+  //* Effect:
+  //? We use an empty dependancy array since we want to get the data from the back end only once so no rerenders are necessary:
+  useEffect(() => {
+    //! Note useEffect can't be an async function, so the turnaround way is to call make a function that would be called in the useEffect so we can make it an async function.
+    const fetchData = async () => {
+      // we set loading true at first since we are waiting for the data to get to the front end
+      setLoading(true);
+      //* Using axios since it is a community standard:
+      const res = await axios.get("http://localhost:3000/products");
+      setItem(res.data);
+      setLoading(false);
+    };
+    fetchData();
+
+    // setLoading(true);
+    // fetch("http://localhost:3000/products")
+    //   .then((res) => res.json())
+    //   .then((data) => {
+    //     setItem(data);
+    //     setLoading(false);
+    //   });
+  }, []);
 
   function handlePageNumber(items, currentPage) {
     const totalPages = Math.max(1, Math.ceil(items.length / itemsPerPage));
@@ -158,6 +111,7 @@ function App() {
           path="/"
           element={
             <Home
+              loading={loading}
               items={items}
               activeCategory={activeCategory}
               handleIncrement={handleIncrement}

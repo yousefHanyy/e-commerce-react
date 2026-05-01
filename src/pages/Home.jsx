@@ -1,6 +1,7 @@
 import Cart from "../components/Cart";
 
 export default function Home({
+  loading,
   items,
   handleIncrement,
   handleDecrement,
@@ -23,6 +24,14 @@ export default function Home({
     Math.ceil(filteredItems.length / itemsPerPage),
   );
   const paginatedItems = handlePageNumber(filteredItems, page);
+
+  //? An early return or a 'Guard clause' can be used here for conditional rendering if  for example the loading isn't false yet:
+  if (loading)
+    return (
+      <div className="flex items-center justify-center h-100">
+        <span className="loading loading-spinner loading-xl"></span>
+      </div>
+    );
 
   return (
     <div className="flex justify-center gap-10">
